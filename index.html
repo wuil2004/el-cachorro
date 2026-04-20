@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paseos El Cachorro | Dog Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        dark: '#0a0a0a',
+                        darker: '#050505',
+                        gold: '#d4af37'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .float-ws {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-darker text-gray-300 font-sans antialiased overflow-x-hidden selection:bg-gray-700 selection:text-white">
+
+    <section class="relative h-screen flex flex-col justify-center items-center text-center px-4 z-10">
+        <div class="absolute inset-0 w-full h-full overflow-hidden -z-10">
+            <video autoplay loop muted playsinline class="object-cover w-full h-full opacity-40">
+                <source src="video.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-darker"></div>
+        </div>
+
+        <img src="logo.png" alt="Logo Paseos El Cachorro" class="w-40 md:w-56 mb-8 bg-white/5 backdrop-blur-sm rounded-full p-4 border border-white/10 shadow-2xl fade-in" onerror="this.src='https://via.placeholder.com/200?text=Logo'">
+        
+        <h1 class="text-4xl md:text-7xl font-serif text-white mb-6 tracking-wide fade-in shadow-black drop-shadow-lg">
+            Paseos El Cachorro
+        </h1>
+        <p class="text-sm md:text-xl font-light tracking-[0.3em] text-gray-400 mb-12 fade-in uppercase">
+            Instinto • Aventura • Dedicación
+        </p>
+        
+        <a href="#servicios" class="border border-white/50 text-white px-10 py-4 uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-dark transition-all duration-500 fade-in backdrop-blur-md">
+            Conoce Nuestro Trabajo
+        </a>
+    </section>
+
+    <section class="py-32 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 fade-in">
+        <div class="md:w-1/2">
+            <h2 class="text-3xl md:text-5xl font-serif text-white mb-6 leading-tight">Más que un paseo,<br><span class="text-gray-500 italic">una expedición.</span></h2>
+            <div class="w-12 h-px bg-white/30 mb-8"></div>
+            <p class="text-lg leading-relaxed font-light text-gray-400 mb-6">
+                Entendemos que cada cachorro es un lobo moderno. No damos vueltas a la manzana; diseñamos rutas donde tu mejor amigo estimula sus sentidos, libera su energía de forma equilibrada y socializa bajo un alto estándar de cuidado y responsabilidad.
+            </p>
+        </div>
+        <div class="md:w-1/2 relative">
+            <div class="absolute inset-0 border border-white/20 translate-x-4 translate-y-4"></div>
+            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=2069&auto=format&fit=crop" alt="Perro atento" class="w-full h-auto grayscale hover:grayscale-0 transition duration-700 relative z-10 shadow-2xl">
+        </div>
+    </section>
+
+    <section id="servicios" class="py-24 bg-dark px-6 border-t border-b border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-serif text-white text-center mb-20 fade-in">Nuestras Rutas</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-darker border border-white/10 p-10 text-center hover:border-gray-400 transition duration-500 fade-in group cursor-default">
+                    <div class="text-gray-600 mb-6 group-hover:text-white transition duration-500">
+                        <i class="fa-solid fa-paw text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl text-white mb-2 font-serif">Paseo Básico</h3>
+                    <p class="tracking-[0.2em] text-gray-500 mb-8 text-xs uppercase">45 Minutos</p>
+                    <p class="font-light text-gray-400 text-sm leading-relaxed mb-8">Caminata estructurada enfocada en la disciplina y el ejercicio cardiovascular moderado.</p>
+                </div>
+
+                <div class="bg-gradient-to-b from-gray-900 to-darker border border-gray-600 p-10 text-center transform md:-translate-y-4 shadow-2xl fade-in group cursor-default relative overflow-hidden">
+                    <div class="text-gray-400 mb-6 group-hover:text-white transition duration-500">
+                        <i class="fa-solid fa-mountain text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl text-white mb-2 font-serif">La Gran Aventura</h3>
+                    <p class="tracking-[0.2em] text-gray-400 mb-8 text-xs uppercase">90 Minutos</p>
+                    <p class="font-light text-gray-300 text-sm leading-relaxed mb-8">Expedición larga en entornos naturales. Liberación total de energía, rastro y juego supervisado.</p>
+                </div>
+
+                <div class="bg-darker border border-white/10 p-10 text-center hover:border-gray-400 transition duration-500 fade-in group cursor-default">
+                    <div class="text-gray-600 mb-6 group-hover:text-white transition duration-500">
+                        <i class="fa-solid fa-shield-dog text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl text-white mb-2 font-serif">Atención Personalizada</h3>
+                    <p class="tracking-[0.2em] text-gray-500 mb-8 text-xs uppercase">A Medida</p>
+                    <p class="font-light text-gray-400 text-sm leading-relaxed mb-8">Grupos de máximo 2 perros. Enfoque en socialización delicada y reporte de comportamiento para tu tranquilidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 max-w-7xl mx-auto flex flex-col md:flex-row gap-12 fade-in">
+        <div class="md:w-1/2 grid grid-cols-2 gap-4">
+            <img src="https://cdn.pixabay.com/photo/2016/08/23/04/43/dogs-1613563_1280.jpg" class="w-full h-48 object-cover grayscale hover:grayscale-0 transition duration-500 border border-white/10" alt="Perro 1">
+            <img src="https://www.infobae.com/resizer/v2/YXO6DBLK5ZERZN2WDBNPLFLT4A.jpg?auth=a803f405fb17a0ea660837b5931f7e5babb19a61fc7d60c288814bbbd343f26b" class="w-full h-48 object-cover grayscale hover:grayscale-0 transition duration-500 border border-white/10" alt="Perro 2">
+            <img src="https://funnyfuzzy.com/cdn/shop/articles/3_c2a31757-12bd-4191-9d99-a51153f77193.jpg?v=1762943030" class="w-full h-48 object-cover grayscale hover:grayscale-0 transition duration-500 border border-white/10" alt="Perro 3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZDkkd0EKPfNAOKjiE8HBcWKrY6fTq4BL1mg&s" class="w-full h-48 object-cover grayscale hover:grayscale-0 transition duration-500 border border-white/10" alt="Perro 4">
+        </div>
+        
+        <div class="md:w-1/2 flex flex-col justify-center">
+            <h2 class="text-3xl font-serif text-white mb-6">Territorio de Manada</h2>
+            <p class="text-lg font-light text-gray-400 mb-10 leading-relaxed">
+                Brindamos nuestro servicio con la mayor dedicación. Nuestro equipo de trabajo se asegura de mantener la confianza, el bienestar y la seguridad en cada paso que da tu mascota con nosotros.
+            </p>
+            
+            <div class="space-y-4">
+                <p class="text-xs uppercase tracking-[0.2em] text-gray-500">¿Listo para agendar?</p>
+                <a href="https://wa.me/5534482992?text=Hola,%20me%20interesa%20conocer%20las%20tarifas%20de%20Paseos%20El%20Cachorro" target="_blank" class="inline-flex items-center gap-3 border border-white text-white px-8 py-4 uppercase tracking-[0.1em] text-sm hover:bg-white hover:text-dark transition duration-300 w-full justify-center">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Contactar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-dark border-t border-white/5 px-6">
+        <div class="max-w-5xl mx-auto text-center fade-in">
+            <h2 class="text-3xl font-serif text-white mb-16">Lo que dice la Manada</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="p-8 border border-white/5 bg-darker">
+                    <div class="text-gold mb-4 text-xl"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-400 font-light italic mb-6">"El cuidado con el que trabajan me da mucha confianza. Mi Husky regresa relajado y feliz; se nota que hacen su trabajo con vocación."</p>
+                    <p class="text-white text-sm uppercase tracking-widest">— Familia Rodríguez</p>
+                </div>
+                <div class="p-8 border border-white/5 bg-darker">
+                    <div class="text-gold mb-4 text-xl"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-400 font-light italic mb-6">"Me encanta la seriedad con la que manejan a los perritos. Saber cómo se comportó durante el paseo me da muchísima tranquilidad."</p>
+                    <p class="text-white text-sm uppercase tracking-widest">— Andrea M.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/5 py-10 text-center text-xs tracking-widest uppercase text-gray-600 bg-darker">
+        <p>© 2026 Paseos El Cachorro. Trabajo & Naturaleza.</p>
+    </footer>
+
+    <a href="https://wa.me/521234567890?text=Hola,%20quisiera%20agendar%20un%20paseo" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:bg-[#1ebe57] transition-all float-ws z-50">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const faders = document.querySelectorAll('.fade-in');
+            const appearOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+        });
+    </script>
+</body>
+</html>
